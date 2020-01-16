@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Evan Mo（studio@925i.cn）">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>图标库</title>
+    <title>图标库</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/fzIcon.css">
+    <link rel="stylesheet" href="css/fzIconStyle.css">
+    <style>
+        .show-modal {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+
+<body>
+    <button class="btn btn-success btn-lg show-modal" data-toggle="modal" data-target="#FzIconsModal">显示图标库</button>
+    <!-- 模态框（Modal） -->
+    <div class="modal fade" id="FzIconsModal" tabindex="-1" role="dialog" aria-labelledby="FzIconsModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header fz-icons-modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">图标库</h4>
+                </div>
+                <div class="modal-body fz-icons-modal-body">
+                    图标内容加载中...
+                </div>
+                <div class="modal-footer fz-icons-modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-success" id="Save">保存</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="./js/fzIcon.js"></script>
+    <script>
+        window.onload = function() {
+            var func = new FzIcons({
+                container: '.fz-icons-modal-body',
+                selectColor: '#ff80ab',
+                pagingColor: '#ff80ab',
+                useClearBtn: true,
+                pagingSize: 72 //每页大小 
+            });
+            $("#Save").off('click').on('click', function() {
+                console.log('save');
+                console.log(func.save());
+            });
+
+        }
+    </script>
+</body>
+
+</html>
