@@ -196,7 +196,7 @@ const _fzIcons = [{ "key": "fzicon-tonggao-01", "value": "fzicon-tonggao-01", "h
                 clearTimeout(_timer);
                 _this.render(_goPageData);
                 _this.renderPaging();
-            }, 500);
+            }, 10);
         },
         /** 渲染分页 */
         renderPaging: function() {
@@ -289,12 +289,17 @@ const _fzIcons = [{ "key": "fzicon-tonggao-01", "value": "fzicon-tonggao-01", "h
         },
         /** 初始化 */
         init: function() {
+            var _this=this;
             if (this.options.container === '') {
                 console.error('未配置图标生成容器，缺少配置参数： container');
                 return;
             }
-            this._totalData = _fzIcons;
-            this.createElements();
+            this._totalData = _fzIcons; 
+            $(this.options.container).text("正在加载图标...");
+            var _timer = setTimeout(function() {
+                clearTimeout(_timer);
+                _this.createElements();
+            }, 500); 
         }
     };
     window.FzIcons = FzIcons;
