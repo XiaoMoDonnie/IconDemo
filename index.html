@@ -55,8 +55,10 @@
                 pagingSize: 72 //每页大小 
             });
             $("#Save").off('click').on('click', function() {
+                var _icon=func.save();
                 console.log('save');
-                console.log(func.save());
+                console.log(_icon);
+                alert("选中："+_icon);
             });
 
         }
