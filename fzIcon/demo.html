@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>图标库</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/fzIcon.css">
+    <link rel="stylesheet" href="css/fzIconStyle.css">
+    <style>
+        .show-modal {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+
+<body>
+    <button class="btn btn-primary btn-lg show-modal" data-toggle="modal" data-target="#FzIconsModal">显示图标库</button>
+    <!-- 模态框（Modal） -->
+    <div class="modal fade" id="FzIconsModal" tabindex="-1" role="dialog" aria-labelledby="FzIconsModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header fz-icons-modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">图标库</h4>
+                </div>
+                <div class="modal-body fz-icons-modal-body">
+                    <!-- <div class="fz-icons">
+                        <div class="fz-icons-search">
+                            <div class="input-group">
+                                <span class="input-group-addon fz-icon-search-tip">图标名称：</span>
+                                <input type="text" name="FzIconsSearchInput" class="form-control fz-icons-search-input" placeholder="输入图标名称...">
+                                <span class="input-group-btn">
+                                <button type="button" class="btn btn-success fz-icon-search-btn" id="FzIconsSearchBtn">搜索</button type="button">
+                              </span>
+                            </div>
+                        </div>
+                        <ul class="fz-icon-list" id="FzIcons">
+                            <li class="fz-icon-item-not-found">正在加载图标... </li>
+                        </ul>
+                    </div>
+                    <div class="fz-icons-pagin">
+                        <nav aria-label="Page navigation">
+
+                            <ul class="pagination fz-icon-pagination" id="FzIconPagination">
+                                <li class="fz-icon-to-page-tip">共 334 个图标</li>
+                                <li class="fz-icon-to-page-tip">搜索到 100 个图标</li> 
+                    <li id="FzIconPrev">
+                        <a href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    <li data-index="5" class="fz-icon-to-page active "><a href="#">1</a></li>
+                    <li data-index="5" class="fz-icon-to-page"><a href="#">2</a></li>
+                    <li data-index="5" class="fz-icon-to-page"><a href="#">3</a></li>
+                    <li data-index="5" class="fz-icon-to-page"><a href="#">4</a></li>
+                    <li data-index="5" class="fz-icon-to-page"><a href="#">5</a></li>
+                    <li>
+                        <a href="#" id="FzIconNext" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                    </ul>
+                    </nav>
+                </div> -->
+                </div>
+                <div class="modal-footer fz-icons-modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-primary" id="Save">保存</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="fz-icons">
+        <div class="fz-icons-search">
+            <div class="input-group">
+                <span class="input-group-addon fz-icon-search-tip">图标名称：</span>
+                <input type="text" name="FzIconsSearchInput" class="form-control fz-icons-search-input" placeholder="输入图标名称...">
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-success fz-icon-search-btn" id="FzIconsSearchBtn">搜索</button type="button">
+                  </span>
+            </div>
+        </div>
+        <ul class="fz-icon-list" id="FzIcons">
+            <li class="fz-icon-item"></li>
+        </ul>
+    </div> -->
+
+
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- <script src="./json/iconsJson.js"></script> -->
+    <script src="./js/fzIcon.js"></script>
+    <script>
+        window.onload = function() {
+            var func = new FzIcons({
+                container: '.fz-icons-modal-body',
+                selectColor: '#ff80ab',
+                pagingColor: '#ff80ab',
+                useClearBtn: true,
+                pagingSize: 72 //每页大小 
+            });
+            $("#Save").off('click').on('click', function() {
+                console.log('save');
+                console.log(func.save());
+            });
+
+        }
+    </script>
+</body>
+
+</html>

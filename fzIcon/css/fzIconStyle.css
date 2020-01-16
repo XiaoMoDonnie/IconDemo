@@ -1,0 +1,83 @@
+* {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.fz-icons {
+    overflow-y: auto;
+    max-height: 345px;
+    margin: 10px 0;
+}
+
+.fz-icon-list {
+    overflow: hidden;
+    padding: 10px 0;
+}
+
+.fz-icon-list .fz-icon-item {
+    float: left;
+    font-size: 32px;
+    box-sizing: border-box;
+    cursor: pointer;
+    width: 46px;
+    height: 46px;
+    line-height: 48px;
+    text-align: center;
+}
+
+.fz-icon-list .fz-icon-item-not-found {
+    text-align: center;
+}
+
+.fz-icon-list .fz-icon-item.active {
+    border: 2px solid #319bf5;
+    border-radius: 5px;
+}
+
+.fz-icon-search-tip {
+    /* border-radius: 0; */
+}
+
+.fz-icon-search-tip.active {
+    background-color: #319bf5;
+    color: #fff;
+    border: 1px solid #319bf5;
+}
+
+.btn.fz-icon-search-btn {
+    display: none;
+}
+
+.btn.fz-icon-search-btn:focus {
+    outline: initial;
+}
+
+.fz-icons-pagin {
+    text-align: center;
+}
+
+.fz-icon-pagination {
+    margin: 0;
+    line-height: 34px;
+}
+
+.fz-icon-to-page>a .fz-icon-to-page>a:hover,
+.fz-icon-to-page>a:active,
+.fz-icon-to-page>a:visited,
+.fz-icon-to-page>a:link,
+.fz-icon-to-page>a:focus {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0)!important;
+}
+
+.fz-icon-to-page-tip {
+    float: left;
+    margin-right: 20px;
+}
+
+.pagination>li:nth-child(2)>a,
+.pagination>li:nth-child(2)>span {
+    margin-left: 0;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
