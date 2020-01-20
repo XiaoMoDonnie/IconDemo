@@ -186,11 +186,11 @@ const _fzIcons = [{ "key": "fzicon-tonggao-01", "value": "fzicon-tonggao-01", "h
 
             if (_this._searchKey !== '') {
                 _pData = _this._searchData;
-                _limit = index * _this.options.pagingSize > _this._searchData.length ? _this._searchData.length : index * _this.options.pagingSize;
             } else {
                 _pData = _this._totalData;
-                _limit = index * _this.options.pagingSize > _this._totalData.length ? _this._totalData.length : index * _this.options.pagingSize;
             }
+             _limit = index * _this.options.pagingSize > _pData.length ? _pData.length : index * _this.options.pagingSize;
+            
             for (var pi = _task; pi <= _limit; pi++) {
                 _goPageData.push(_pData[pi - 1]);
             }
