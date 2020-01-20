@@ -106,12 +106,15 @@ const _fzIcons = [{ "key": "fzicon-tonggao-01", "value": "fzicon-tonggao-01", "h
          * @param {any} callback 保存后的回调
          * @returns {any} 返回图标的样式 class 类
          */
-        save: function(callback) {
+        save: function(callback) { 
             if (this._selectVal === '') {
-                console.log('当前没有选择图标！');
+                console.warn('当前没有选择图标！');
             }
-            //callback(this._selectVal); //使用回调函数：调用时，代码太长
-            return this._selectVal;
+            if (callback !== undefined && typeof callback === "function") {
+                callback(this._selectVal); //使用回调函数：调用时，代码太长 
+            } else {
+                return this._selectVal;
+            } 
         },
         /** 搜索 */
         search: function() {
