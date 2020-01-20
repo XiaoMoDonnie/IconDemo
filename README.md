@@ -4,8 +4,7 @@
 
 # 相关配置
 
- ``` 初始化
-  <script>
+ ``` <script>
         window.onload = function() {
             
             //初始化图标库
@@ -28,17 +27,8 @@
                 console.log(func.save());
             });
         }
-    </script>
-    
-    ```
- 
-  
- 
- 
- 
- 
- 
- 
+    </script> 
+ ```
  
  [封装参考](https://www.cnblogs.com/jason1991/p/9177692.html)
  
